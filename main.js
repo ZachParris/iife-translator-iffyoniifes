@@ -1,6 +1,11 @@
 /* The team must discuss and choose a single variable name that will hold all
  of the logic that the team creates (i.e. see the Sedan example above).*/
 
+ var TranslatedGreeting = (function(){
+
+
+ }())
+
 
 /*The lexicon should be a private variable that cannot be accessed by 
 the other team member's module except through an accessor (getter) method.*/
