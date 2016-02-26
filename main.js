@@ -3,6 +3,13 @@
 
  var TranslatedGreeting = (function(){
 
+    var userInput = "Test Input";
+
+    return {
+        getTest: function(){
+            return 'hello'
+        }
+    }
 
  }())
 

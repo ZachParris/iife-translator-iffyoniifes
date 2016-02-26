@@ -13,7 +13,6 @@ var TranslatedGreeting = (function(oldTranslatedGreeting){
 
     oldTranslatedGreeting.translateToPigLatin = function(inputText) {
         var inputCutUp = inputText.split(" ");
-        console.log("inputCutUp", inputCutUp);
         inputCutUp[inputCutUp.indexOf("Merry")] = pigLatinLexicon.Merry;
         inputCutUp[inputCutUp.indexOf("Christmas")] = pigLatinLexicon.Christmas;
         inputCutUp[inputCutUp.indexOf("you")] = pigLatinLexicon.you;
