@@ -2,7 +2,7 @@
 Each teammate's IIFE will augment the other teammates' IIFEs.*/
 //"Feliz Natal Seu animal imundo"
 //Create an object for lexicon to translate to Port.
-var TranslatedGreeting = (function(TranslatedGreeting){
+var TranslatedGreeting = (function(oldTranslatedGreeting){
 	var portugese = {
 	MERRY: "Feliz",
 	CHRISTMAS: "Natal",
@@ -12,15 +12,17 @@ var TranslatedGreeting = (function(TranslatedGreeting){
 }
 //Create a function with a string to pass in the object?
 //loop through an array using .split and .indexOf to target each word
-TranslatedGreeting.translateToPortugese = function(splitUpGreeting) {
-	var splitUpGreeting = greetingString.split(" ")
-	   splitUpGreeting[splitUpGreeting.indexOf("merry")]=portugese.merry;
-	   splitUpGreeting[splitUpGreeting.indexOf("christmas")]=portugese.christmas;
-	   splitUpGreeting[splitUpGreeting.indexOf("you")]=portugese.you;
-	   splitUpGreeting[splitUpGreeting.indexOf("filthy")]=portugese.filthy;
-	   splitUpGreeting[splitUpGreeting.indexOf("animal")]=portugese.animal;
+oldTranslatedGreeting.translateToPortugese = function(monkeyButt) {
+	var splitUpGreeting = monkeyButt.split(" "); 
+	   splitUpGreeting[splitUpGreeting.indexOf("MERRY")]=portugese.MERRY;
+	   splitUpGreeting[splitUpGreeting.indexOf("CHRISTMAS")]=portugese.CHRISTMAS;
+	   splitUpGreeting[splitUpGreeting.indexOf("YOU")]=portugese.YOU;
+	   splitUpGreeting[splitUpGreeting.indexOf("FILTHY")]=portugese.FILTHY;
+	   splitUpGreeting[splitUpGreeting.indexOf("ANIMAL")]=portugese.ANIMAL;
 	   var holidayGreeting = splitUpGreeting.join(" ");
-	   return TranslatedGreeting;
+	   return holidayGreeting;
 };
-return TranslatedGreeting;
+
+return oldTranslatedGreeting;
+
 }(TranslatedGreeting || {}));
