@@ -1,22 +1,25 @@
-var funTranslation = (function(){
+var TranslatedGreeting = (function(oldTranslatedGreeting){
   var words = {
-    Merry: "Frohlich",
-    Christmas: "Weihnachten",
-    You: "Sie",
-    Filthy: "Schmutzige",
-    Animal: "Tier";
+    MERRY: "Frohlich",
+    CHRISTMAS: "Weihnachten",
+    YOU: "Sie",
+    FILTHY: "Schmutzige",
+    ANIMAL: "Tier"
   }
 
-  return {
-    translateToGerman : function(whatToTranslate){
-      var newString = "";
-      var splitString = whatToTranslate.split(" ");
-      for (var i in splitString){
-        newString += words[splitString[i]] + " ";
-      }
-      return newString;
+  oldTranslatedGreeting.translateToGerman = function(whatToTranslate){
+    var newString = "";
+    var splitString = whatToTranslate.split(" ");
+    for (var i in splitString){
+      newString += words[splitString[i]] + " ";
     }
+    var outputDiv = document.getElementById("outputText");
+    outputDiv.innerHTML = newString;
+    return newString;
   }
-}());
+
+  return oldTranslatedGreeting
+
+}(TranslatedGreeting));
 /*Each team member will create one JavaScript file that contains one IIFE. 
 Each teammate's IIFE will augment the other teammates' IIFEs.*/
