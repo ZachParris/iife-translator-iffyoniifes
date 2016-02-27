@@ -9,9 +9,16 @@ var TranslatedGreeting = (function(oldTranslatedGreeting){
 
   oldTranslatedGreeting.translateToGerman = function(whatToTranslate){
     var newString = "";
+    var tempString = "";
     var splitString = whatToTranslate.split(" ");
     for (var i in splitString){
-      newString += words[splitString[i]] + " ";
+      tempString = words[splitString[i]];
+      console.log("words",splitString[i]);
+      console.log("tempString", tempString);
+      if ((tempString) === undefined){
+        tempString = splitString[i];
+      }
+      newString += tempString + " ";
     }
     var outputDiv = document.getElementById("outputText");
     outputDiv.innerHTML = newString;
