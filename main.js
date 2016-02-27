@@ -21,24 +21,27 @@
  //Grab user's input in fext field
  function getUserInput() {
     var userInput = document.getElementById("inputText").value;
-    return userInput
+    return userInput.toUpperCase();
  }
  
  //Based on user's selection, have the translator preform a different translation function
 function passDatTranslation() {
     var userInput = getUserInput();
-    var languageSelect = document.getElementById("languageSelect")
+    var outputText1 = document.getElementById("outputText");
+    var result = "";
+    var languageSelect = document.getElementById("languageSelect");
     if (languageSelect.value === "germ") {
-        TranslatedGreeting.translateToGerman(userInput)
+        result = TranslatedGreeting.translateToGerman(userInput)
     } else if (languageSelect.value === "pig") {
-        TranslatedGreeting.translateToPigLatin(userInput)
+        result = TranslatedGreeting.translateToPigLatin(userInput)
     } else if (languageSelect.value === "port") {
-        TranslatedGreeting.translateToPortugese(userInput)
+        result = TranslatedGreeting.translateToPortugese(userInput)
     } else if (languageSelect.value === "russ") {
-        TranslatedGreeting.translateToRussian(userInput) 
+        result = TranslatedGreeting.translateToRussian(userInput) 
     } else {
         alert("PICK A LANGUAGE YOU BOZO")
     }
+    outputText1.innerHTML = result;
 }
 
 

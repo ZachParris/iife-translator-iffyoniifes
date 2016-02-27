@@ -13,8 +13,6 @@ var TranslatedGreeting = (function(oldTranslatedGreeting){
     for (var i in splitString){
       newString += words[splitString[i]] + " ";
     }
-    var outputDiv = document.getElementById("outputText");
-    outputDiv.innerHTML = newString;
     return newString;
   }
 
