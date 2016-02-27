@@ -13,9 +13,35 @@
 
  }())
 
+ //Add event listener for button
+ var button = document.getElementById("translate")
+ button.addEventListener("click", passDatTranslation)
 
-/*The lexicon should be a private variable that cannot be accessed by 
-the other team member's module except through an accessor (getter) method.*/
+
+ //Grab user's input in fext field
+ function getUserInput() {
+    var userInput = document.getElementById("inputText").value;
+    return userInput
+ }
+ 
+ //Based on user's selection, have the translator preform a different translation function
+function passDatTranslation() {
+    var userInput = getUserInput();
+    var languageSelect = document.getElementById("languageSelect")
+    if (languageSelect.value === "germ") {
+        TranslatedGreeting.translateToGerman(userInput)
+    } else if (languageSelect.value === "pig") {
+        TranslatedGreeting.translateToPigLatin(userInput)
+    } else if (languageSelect.value === "port") {
+        TranslatedGreeting.translateToPortugese(userInput)
+    } else if (languageSelect.value === "russ") {
+        TranslatedGreeting.translateToRussian(userInput) 
+    } else {
+        alert("PICK A LANGUAGE YOU BOZO")
+    }
+}
+
+
 
 /*Each IIFE should expose, in its public interface, a method named translateTo{Language} 
 (e.g. translateToSpanish or translateToFinnish) that accepts a single argument. 
