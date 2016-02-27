@@ -17,6 +17,10 @@
  var button = document.getElementById("translate")
  button.addEventListener("click", passDatTranslation)
 
+//Add event listener for clear button
+ var button2 = document.getElementById("clear")
+ button2.addEventListener("click", clearDatShit)
+
 
  //Grab user's input in fext field
  function getUserInput() {
@@ -44,7 +48,10 @@ function passDatTranslation() {
     outputText1.innerHTML = result;
 }
 
-
+function clearDatShit(){
+    var clearButton = document.getElementById("inputText")
+    clearButton.value = "";
+}
 
 /*Each IIFE should expose, in its public interface, a method named translateTo{Language} 
 (e.g. translateToSpanish or translateToFinnish) that accepts a single argument. 
