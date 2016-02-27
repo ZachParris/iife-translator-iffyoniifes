@@ -15,20 +15,8 @@ var funTranslation = (function(){
         newString += words[splitString[i]] + " ";
       }
       return newString;
-    },
-
-    returnFirst: function(){
-      return words.Merry;
-    },
-    returnFoo: function(){
-      return Object.keys(words);
-    },
-    returnFoo2: function(){
-      var x = Object.keys(words);
-      return words[x[0]];
-      // for (var i in words){
-      //   alert(words[i]);
-      // }
     }
   }
 }());
+/*Each team member will create one JavaScript file that contains one IIFE. 
+Each teammate's IIFE will augment the other teammates' IIFEs.*/
