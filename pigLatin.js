@@ -15,11 +15,13 @@ var TranslatedGreeting = (function(oldTranslatedGreeting){
 
     oldTranslatedGreeting.translateToPigLatin = function(inputText) {
         var inputCutUp = inputText.split(" ");
-        inputCutUp[inputCutUp.indexOf("MERRY")] = pigLatinLexicon.MERRY;
-        inputCutUp[inputCutUp.indexOf("CHRISTMAS")] = pigLatinLexicon.CHRISTMAS;
-        inputCutUp[inputCutUp.indexOf("YOU")] = pigLatinLexicon.YOU;
-        inputCutUp[inputCutUp.indexOf("FILTHY")] = pigLatinLexicon.FILTHY;
-        inputCutUp[inputCutUp.indexOf("ANIMAL")] = pigLatinLexicon.ANIMAL;
+        for (var i = 0; i < inputCutUp.length; i++) {
+            inputCutUp[inputCutUp.indexOf("MERRY")] = pigLatinLexicon.MERRY;
+            inputCutUp[inputCutUp.indexOf("CHRISTMAS")] = pigLatinLexicon.CHRISTMAS;
+            inputCutUp[inputCutUp.indexOf("YOU")] = pigLatinLexicon.YOU;
+            inputCutUp[inputCutUp.indexOf("FILTHY")] = pigLatinLexicon.FILTHY;
+            inputCutUp[inputCutUp.indexOf("ANIMAL")] = pigLatinLexicon.ANIMAL;
+        }
         var sentence = oldTranslatedGreeting.joinSentence(inputCutUp);
         return sentence
     }
