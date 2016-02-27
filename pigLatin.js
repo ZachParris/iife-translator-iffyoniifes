@@ -6,11 +6,11 @@ var TranslatedGreeting = (function(oldTranslatedGreeting){
     /*The lexicon should be a private variable that cannot be accessed by 
     the other team member's module except through an accessor (getter) method.*/
     var pigLatinLexicon = {
-    Merry: "Errymay",
-    Christmas: "Istmaschray",
-    you: "ouyay",
-    filthy: "ilthyfay",
-    animal: "animalay"
+    MERRY: "Errymay",
+    CHRISTMAS: "Istmaschray",
+    YOU: "ouyay",
+    FILTHY: "ilthyfay",
+    ANIMAL: "animalay"
     }
 
     oldTranslatedGreeting.translateToPigLatin = function(inputText) {
