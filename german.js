@@ -13,8 +13,6 @@ var TranslatedGreeting = (function(oldTranslatedGreeting){
     var splitString = whatToTranslate.split(" ");
     for (var i in splitString){
       tempString = words[splitString[i]];
-      console.log("words",splitString[i]);
-      console.log("tempString", tempString);
       if ((tempString) === undefined){
         tempString = splitString[i];
       }

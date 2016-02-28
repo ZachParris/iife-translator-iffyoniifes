@@ -30,21 +30,26 @@
  
  //Based on user's selection, have the translator preform a different translation function
 function passDatTranslation() {
-    var userInput = getUserInput();
     var outputText1 = document.getElementById("outputText");
-    var result = "";
+    var result = "Watch this space for greeting.";
     var languageSelect = document.getElementById("languageSelect");
-    if (languageSelect.value === "germ") {
-        result = TranslatedGreeting.translateToGerman(userInput)
-    } else if (languageSelect.value === "pig") {
-        result = TranslatedGreeting.translateToPigLatin(userInput)
-    } else if (languageSelect.value === "port") {
-        result = TranslatedGreeting.translateToPortugese(userInput)
-    } else if (languageSelect.value === "russ") {
-        result = TranslatedGreeting.translateToRussian(userInput) 
+    var userInput = getUserInput();
+    if (userInput.length > 0){
+        if (languageSelect.value === "germ") {
+            result = TranslatedGreeting.translateToGerman(userInput)
+        } else if (languageSelect.value === "pig") {
+            result = TranslatedGreeting.translateToPigLatin(userInput)
+        } else if (languageSelect.value === "port") {
+            result = TranslatedGreeting.translateToPortugese(userInput)
+        } else if (languageSelect.value === "russ") {
+            result = TranslatedGreeting.translateToRussian(userInput) 
+        } else {
+            alert("PICK A LANGUAGE YOU BOZO")
+        }
     } else {
-        alert("PICK A LANGUAGE YOU BOZO")
+        alert("ENTER TEXT YOU BONEHEAD")
     }
+    
     outputText1.innerHTML = result;
 }
 
