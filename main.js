@@ -16,10 +16,14 @@
  //Add event listener for button
  var button = document.getElementById("translate")
  button.addEventListener("click", passDatTranslation)
+var button = document.getElementById("translate")
+ button.addEventListener("keypress", passDatTranslation);
 
 //Add event listener for clear button
  var button2 = document.getElementById("clear")
  button2.addEventListener("click", clearDatShit)
+  var button = document.getElementById("clear")
+ button.addEventListener("keypress", clearDatShit);
 
 
  //Grab user's input in fext field
