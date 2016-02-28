@@ -1,26 +1,49 @@
 /*Each team member will create one JavaScript file that contains one IIFE. 
 Each teammate's IIFE will augment the other teammates' IIFEs.*/
 
-var TranslatedGreeting = (function(englishGreeting) {
-// the line above establishes an augmenting IIFE 
-    var russianGreeting = [];
-// this is a Russian greeting scoped to the above function. When this is 
-// done, I want to have a built a getter that will simply display the message,
-// after having swapped elements of the 
-    englishGreeting.translateToRussian = function(userInput) {
-// here's my function that will take in the userInput, use split method to turn it 
-// into an array. 
-        var kremlin = userInput.split(" ");
-// Now I want to take the array index items and use the replace method to 'translate' individual
-// words from Merry to веселый and so forth. 
-        russianGreeting += kremlin[kremlin.indexOf("MERRY")].replace("MERRY", "веселый ");
-        russianGreeting += kremlin[kremlin.indexOf("CHRISTMAS")].replace("CHRISTMAS", "russian word ");
-        russianGreeting += kremlin[kremlin.indexOf("YOU")].replace("YOU", "russian word ");
-        russianGreeting += kremlin[kremlin.indexOf("FILTHY")].replace("FILTHY", "russian word ");
-        russianGreeting += kremlin[kremlin.indexOf("ANIMAL")].replace("ANIMAL", "russian word ");
-    // use join method to put array back together. 
-    console.log("Russian!!!", russianGreeting );
-        return russianGreeting;
-        }
-    return englishGreeting;
-}) (TranslatedGreeting);
+// First step is identifying the original IIFE and declaring a new function with a parameter
+var TranslatedGreeting = (function(acceptArg) {
+
+// Create a miniature dictionary with Russian / English equivalent words. 
+    var lexicon = {
+    MERRY: "веселый",
+    CHRISTMAS: "рождество",
+    YOU: "вы",
+    FILTHY: "отвратительный",
+    ANIMAL: "животное",
+  };
+
+  // create new function that operates as the getter. 
+    acceptArg.translateToRussian = function(userInput) {
+        var applyLexicon = userInput.split(" "); 
+// take userInput and split to an array with a space as delimiter 
+           applyLexicon[applyLexicon.indexOf("MERRY")]=lexicon.MERRY;
+           applyLexicon[applyLexicon.indexOf("CHRISTMAS")]=lexicon.CHRISTMAS;
+           applyLexicon[applyLexicon.indexOf("YOU")]=lexicon.YOU;
+           applyLexicon[applyLexicon.indexOf("FILTHY")]=lexicon.FILTHY;
+           applyLexicon[applyLexicon.indexOf("ANIMAL")]=lexicon.ANIMAL;
+// find individual instances of english words using index of and replace with russian equivalent. 
+       var regroup = applyLexicon.join(" ");
+// re-join the items to get it out of an array and into a format suitable for the output div
+       return regroup;
+};
+    return acceptArg;
+}(TranslatedGreeting));
+
+
+
+// My first-pass code that violated the req's of the assignment by creating an array instead of an object.
+
+// var TranslatedGreeting = (function(acceptArg) {
+//     var russianGreeting = [];
+//     acceptArg.translateToRussian = function(userInput) {
+//         var kremlin = userInput.split(" ");
+//         russianGreeting += kremlin[kremlin.indexOf("MERRY")].replace("MERRY", "веселый ");
+//         russianGreeting += kremlin[kremlin.indexOf("CHRISTMAS")].replace("CHRISTMAS", "рождество ");
+//         russianGreeting += kremlin[kremlin.indexOf("YOU")].replace("YOU", "вы ");
+//         russianGreeting += kremlin[kremlin.indexOf("FILTHY")].replace("FILTHY", "отвратительный ");
+//         russianGreeting += kremlin[kremlin.indexOf("ANIMAL")].replace("ANIMAL", "животное ");
+//         return russianGreeting;
+//         }
+//     return acceptArg;
+// }) (TranslatedGreeting);
