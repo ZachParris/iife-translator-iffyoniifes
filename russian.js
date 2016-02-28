@@ -13,11 +13,11 @@ var TranslatedGreeting = (function(englishGreeting) {
         var kremlin = userInput.split(" ");
 // Now I want to take the array index items and use the replace method to 'translate' individual
 // words from Merry to веселый and so forth. 
-        russianGreeting += kremlin[kremlin.indexOf("Merry")].replace("Merry", "веселый ");
-        russianGreeting += kremlin[kremlin.indexOf("Christmas")].replace("Christmas", "russian word ");
-        russianGreeting += kremlin[kremlin.indexOf("you")].replace("you", "russian word ");
-        russianGreeting += kremlin[kremlin.indexOf("filthy")].replace("filthy", "russian word ");
-        russianGreeting += kremlin[kremlin.indexOf("animal")].replace("animal", "russian word ");
+        russianGreeting += kremlin[kremlin.indexOf("MERRY")].replace("MERRY", "веселый ");
+        russianGreeting += kremlin[kremlin.indexOf("CHRISTMAS")].replace("CHRISTMAS", "russian word ");
+        russianGreeting += kremlin[kremlin.indexOf("YOU")].replace("YOU", "russian word ");
+        russianGreeting += kremlin[kremlin.indexOf("FILTHY")].replace("FILTHY", "russian word ");
+        russianGreeting += kremlin[kremlin.indexOf("ANIMAL")].replace("ANIMAL", "russian word ");
     // use join method to put array back together. 
     console.log("Russian!!!", russianGreeting );
         return russianGreeting;
