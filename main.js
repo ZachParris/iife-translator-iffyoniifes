@@ -26,18 +26,28 @@ var button = document.getElementById("translate")
  button.addEventListener("keypress", clearDatShit);
 
 
+
  //Grab user's input in fext field
  function getUserInput() {
     var userInput = document.getElementById("inputText").value;
     return userInput.toUpperCase();
  }
  
+
+//Grab user's signature
+function getUserSignature() {
+    var userSig = document.getElementById("userSignature").value;
+    var signature = document.getElementById("signIt")
+    signature.innerHTML = "Love, " + userSig;
+}
+
  //Based on user's selection, have the translator preform a different translation function
 function passDatTranslation() {
     var outputText1 = document.getElementById("outputText");
     var result = "Watch this space for greeting.";
     var languageSelect = document.getElementById("languageSelect");
     var userInput = getUserInput();
+    getUserSignature();
     if (userInput.length > 0){
         if (languageSelect.value === "germ") {
             result = TranslatedGreeting.translateToGerman(userInput)
