@@ -3,8 +3,6 @@
 
  var TranslatedGreeting = (function(){
 
-    var userInput = "Test Input";
-
     return {
         getTest: function(){
             return 'hello'
@@ -68,8 +66,10 @@ function passDatTranslation() {
 }
 
 function clearDatShit(){
-    var clearButton = document.getElementById("inputText")
+    var clearButton = document.getElementById("inputText");
+    var signature = document.getElementById("userSignature");
     clearButton.value = "";
+    signature.value = "";
 }
 
 /*Each IIFE should expose, in its public interface, a method named translateTo{Language} 
