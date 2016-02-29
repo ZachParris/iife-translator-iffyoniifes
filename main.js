@@ -11,6 +11,9 @@
 
  }())
 
+ /*JavaScript file that handles interacting with the form elements and determining which method should be called.*/
+
+
  //Add event listener for button
  var button = document.getElementById("translate")
  button.addEventListener("click", passDatTranslation)
@@ -23,15 +26,12 @@ var button = document.getElementById("translate")
   var button = document.getElementById("clear")
  button.addEventListener("keypress", clearDatShit);
 
-
-
  //Grab user's input in fext field
  function getUserInput() {
     var userInput = document.getElementById("inputText").value;
     return userInput.toUpperCase();
  }
  
-
 //Grab user's signature
 function getUserSignature() {
     var userSig = document.getElementById("userSignature").value;
@@ -40,6 +40,10 @@ function getUserSignature() {
 }
 
  //Based on user's selection, have the translator preform a different translation function
+
+//*Each IIFE should expose, in its public interface, a method named translateTo{Language} 
+//(e.g. translateToSpanish or translateToFinnish) that accepts a single argument. 
+//That argument's value should be the text entered in by the user.*/
 function passDatTranslation() {
     var outputText1 = document.getElementById("outputText");
     var result = "Watch this space for greeting.";
@@ -72,8 +76,5 @@ function clearDatShit(){
     signature.value = "";
 }
 
-/*Each IIFE should expose, in its public interface, a method named translateTo{Language} 
-(e.g. translateToSpanish or translateToFinnish) that accepts a single argument. 
-That argument's value should be the text entered in by the user.*/
 
-/*avaScript file that handles interacting with the form elements and determining which method should be called.*/
+

@@ -1,3 +1,7 @@
+/*Each team member will create one JavaScript file that contains one IIFE. 
+Each teammate's IIFE will augment the other teammates' IIFEs.*/
+
+
 var TranslatedGreeting = (function(oldTranslatedGreeting){
   var words = {
     MERRY: "Frohlich",
@@ -24,5 +28,3 @@ var TranslatedGreeting = (function(oldTranslatedGreeting){
   return oldTranslatedGreeting
 
 }(TranslatedGreeting));
-/*Each team member will create one JavaScript file that contains one IIFE. 
-Each teammate's IIFE will augment the other teammates' IIFEs.*/
