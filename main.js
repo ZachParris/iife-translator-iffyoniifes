@@ -72,6 +72,10 @@ function passDatTranslation() {
 function clearDatShit(){
     var clearButton = document.getElementById("inputText");
     var signature = document.getElementById("userSignature");
+    var output = document.getElementById("outputText");
+    var sigOut = document.getElementById("signIt");
+    sigOut.innerHTML = "";
+    output.innerHTML = "Watch this space for a greeting."
     clearButton.value = "";
     signature.value = "";
 }
