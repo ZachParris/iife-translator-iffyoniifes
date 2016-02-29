@@ -5,35 +5,56 @@ body {
 }
 
 h1 {
-    background-color: rgba(255, 255, 255, .3);
+    background: rgba(255, 255, 255, .3) url(lights.gif) bottom center repeat-x;
     text-align: center;
-    padding: 10px;
+    padding: 10px 10px 30px 10px;    
 }
 
 textarea {
-    width: 400px;
+    width: 300px;
     height: 20px;
     font-size: 14px;
-    padding: 5px;
+    padding: 2px 2px 2px 15px;
+    position: relative;
+    top: -2px;
+    border: 2px solid #AD2204;
 }
 
 select {
     margin: 10px;
     position: relative;
-    top: -10px;
-    padding: 5px;
+    top: -13px;
+    height: 20px;
+}
+
+input {
+    width: 75px;
+    height: 20px;
+    font-size: 12px;
+    padding: 2px 2px 2px 5px;
+    position: relative;
+    top: -12px;
+    margin-right: 12px;
+    border: 2px solid #AD2204;
 }
 
 button {
-    padding: 10px;
+    padding:7px;
     position: relative;
     top: -10px;
-    margin: 10px;
+    margin: 10px 8px;
+    font-size: 18px;
     border-radius: 5px;
     background-color: #AD2204;
     font-weight: bold;
     color: white;
+    font-family: lobster, sans-serif;
+    border: none;
+    box-shadow: 0 0 2.5px rgba(255,255,255,.4) , 0 0 5px rgba(255,255,255,.3) , 0 0 7.5px rgba(255,255,255,.2) , 0 0 5px #440607 , 0 0 8.75px #440607 , 0 0 10px #440607 , 0 0 17.5px #440607 ;
+}
 
+button:hover {
+    box-shadow: 0 0 2.5px rgba(255,255,255,1) , 0 0 5px rgba(255,255,255,1) , 0 0 7.5px rgba(255,255,255,1) , 0 0 10px #F3A17E , 0 0 17.5px #F3A17E , 0 0 20px #F3A17E , 0 0 25px #F3A17E ;
 }
 
 #greetingCard {
@@ -44,9 +65,18 @@ button {
 }
 
 #outputText {
-    width: 30%;
+    width: 35%;
     text-align: center;
-    position: absolute;
-    top: 365px;
-    left: 330px;
+    position: relative;
+    top: 170px;
+    left: 220px;
+}
+
+#signIt {
+    width: 35%;
+    text-align: center;
+    position: relative;
+    top: 200px;
+    left: 220px;
+    font-family: lobster;
 }
